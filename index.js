@@ -27,16 +27,16 @@ function hexToTimestamp(hexString) {
   console.log('🚀 ~ file: index.js:18 ~ hexToTimestamp ~ hour:', hour);
   const minute = parseInt(hexArray[4], 16);
   console.log('🚀 ~ file: index.js:20 ~ hexToTimestamp ~ minute:', minute);
-  const secondOctal = parseInt(hexArray[5] + hexArray[6], 16)
-    .toString(8)
+  const secondsNMilliseconds = parseInt(hexArray[5] + hexArray[6], 16)
+    .toString(10)
     .padStart(5, '0');
   console.log(
-    '🚀 ~ file: index.js:22 ~ hexToTimestamp ~ secondOctal:',
-    secondOctal
+    '🚀 ~ file: index.js:22 ~ hexToTimestamp ~ secondNMilliseconds:',
+    secondsNMilliseconds
   );
-  const second = parseInt(secondOctal.slice(0, 2));
+  const second = parseInt(secondsNMilliseconds.slice(0, 2));
   console.log('🚀 ~ file: index.js:26 ~ hexToTimestamp ~ second:', second);
-  const millisecond = parseInt(secondOctal.slice(2));
+  const millisecond = parseInt(secondsNMilliseconds.slice(2));
   console.log(
     '🚀 ~ file: index.js:28 ~ hexToTimestamp ~ millisecond:',
     millisecond
@@ -102,3 +102,12 @@ function prompt() {
 }
 
 prompt();
+
+/*
+17 03 13 0A 1C C7 38
+17 03 13 0B 23 BB 80
+17 03 13 0B 23 E2 90
+17 03 13 0C 1C 9C 40
+17 03 13 0D 06 8C A0
+17 03 13 0D 06 B7 98
+*/
